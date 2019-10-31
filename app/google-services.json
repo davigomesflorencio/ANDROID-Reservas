@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1054274996861",
+    "firebase_url": "https://reservas-2ac32.firebaseio.com",
+    "project_id": "reservas-2ac32",
+    "storage_bucket": "reservas-2ac32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054274996861:android:d157aab4e3ecd4bdb13f14",
+        "android_client_info": {
+          "package_name": "com.ufc.reserva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054274996861-ae8a4vm8e2smt6ererjn1oqe3fu4sdk6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ufc.reserva",
+            "certificate_hash": "f91cb600234e24d79838a7a3f18b1e89992b5fb9"
+          }
+        },
+        {
+          "client_id": "1054274996861-onu8fuu0e8osp5f2i07iab1fv9jqeib2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_0Wte64sW7n60OKSVSGSdKCG6eQnD-GQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054274996861-onu8fuu0e8osp5f2i07iab1fv9jqeib2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

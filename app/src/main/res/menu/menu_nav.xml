@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_item_config"
+        android:icon="@drawable/ic_config"
+        android:title="Configurações" />
+    <item
+        android:id="@+id/nav_item_sobre"
+        android:icon="@drawable/ic_sobre"
+        android:title="Sobre o app" />
+    <item
+        android:id="@+id/nav_item_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Sair" />
+
+</menu>

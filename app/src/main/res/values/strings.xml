@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Reserva de Salas</string>
+    <string name="name">Reservas de salas</string>
+    <string name="version_app">Ver. 1.0.1</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="welcome">"Seja bem-vindo!"</string>
+    <string name="invalid_username">Nome invalido</string>
+    <string name="invalid_email">Email invalido</string>
+    <string name="invalid_password">Tamanho da senha deve ser >5</string>
+    <string name="login_failed">"Login falhou"</string>
+    <string name="open_draw">Abriu</string>
+    <string name="close_draw">Fechou</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="escolha_horario">Escolha um horário</string>
+    <string-array name="horarios">
+        <item>8:00 hrs as 10:00 hrs</item>
+        <item>10:00 hrs as 12:00 hrs</item>
+        <item>13:30 hrs as 15:30 hrs</item>
+        <item>15:30 hrs as 17:30 hrs</item>
+        <item>18:00 hrs as 20:00 hrs</item>
+        <item>20:00 hrs as 22:00 hrs</item>
+    </string-array>
+    <string name="title_activity_localizacao_sala">Map</string>
+</resources>
