@@ -71,9 +71,6 @@ public class HistoricoReservas extends Fragment {
     private void initView(View view) {
         recyclerView = view.findViewById(R.id.lista_historico);
         lottieAnimationView = view.findViewById(R.id.lottie);
-        LinearLayoutManager llm = new LinearLayoutManager(getContext());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(llm);
     }
 
 
@@ -98,7 +95,7 @@ public class HistoricoReservas extends Fragment {
                             lottieAnimationView.cancelAnimation();
                             lottieAnimationView.setVisibility(View.GONE);
                         }
-                        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+                        LinearLayoutManager llm = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
                         recyclerView.setLayoutManager(llm);
                         recyclerView.setAdapter(adapterReserva);
                     }

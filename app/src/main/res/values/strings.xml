@@ -27,4 +27,5 @@
         <item>20:00 hrs as 22:00 hrs</item>
     </string-array>
     <string name="title_activity_localizacao_sala">Map</string>
+    <string name="google_maps_key">AIzaSyC_0Wte64sW7n60OKSVSGSdKCG6eQnD-GQ</string>
 </resources>

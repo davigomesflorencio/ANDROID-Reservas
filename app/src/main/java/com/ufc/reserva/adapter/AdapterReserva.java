@@ -35,7 +35,7 @@ public class AdapterReserva extends RecyclerView.Adapter<ItemReserva> {
     @NonNull
     @Override
     public ItemReserva onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_reserva, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cardview_reserva, parent, false);
         ItemReserva itemReserva = new ItemReserva(view);
         return itemReserva;
     }

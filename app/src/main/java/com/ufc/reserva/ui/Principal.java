@@ -63,6 +63,11 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         initFirebase();
         inicializarViews();
         builder = new AlertDialog.Builder(Principal.this);
+        if (LibraryClass.isOnline(getApplicationContext()) == false) {
+            open_error_internet();
+        } else {
+            open_historico_reservas();
+        }
     }
 
     private void initUsuario() {
@@ -116,11 +121,6 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         //Bottom NavigationView
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        if (LibraryClass.isOnline(getApplicationContext()) == false) {
-            open_error_internet();
-        } else {
-            open_historico_reservas();
-        }
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
