@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorBlueThemePrimary">#2B7ABC</color>
-    <color name="colorBlueThemeSecond">#188BEF</color>
+    <color name="colorAccent">#ef6c00</color>
+    <color name="colorThemePrimary">#0d47a1</color>
+    <color name="colorThemeSecond">#5472d3</color>
     <color name="sombra">#f5f5f5</color>
 </resources>

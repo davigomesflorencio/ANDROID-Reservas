@@ -35,7 +35,7 @@
             android:name=".ui.Sala.LocalizacaoSala"
             android:label="@string/title_activity_localizacao_sala"></activity>
         <activity android:name=".ui.Sala.DetalhesSala" />
-        <activity android:name=".ui.Reserva.CadastroReserva" />
+        <activity android:name=".ui.Reserva.PedidoReserva" />
         <activity android:name=".ui.Principal" />
         <activity android:name=".ui.Usuario.CadastroActivity" />
         <activity

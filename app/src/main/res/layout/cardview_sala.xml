@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/sombra"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="3dp"
         app:cardUseCompatPadding="true">
 
@@ -25,7 +25,6 @@
                 android:id="@+id/cardview_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/colorBlueThemeSecond"
                 android:gravity="center">
 
                 <ImageView
@@ -48,7 +47,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="Sala"
-                    android:textAppearance="@style/custom_font"
                     android:textAlignment="center"
                     android:textSize="15sp" />
 
@@ -58,7 +56,14 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="Bloco"
-                    android:textAppearance="@style/custom_font"
+                    android:textAlignment="center"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Recursos disponiveis"
                     android:textAlignment="center"
                     android:textSize="15sp" />
 
@@ -95,6 +100,20 @@
                         android:layout_margin="5dp"
                         android:background="@drawable/ic_icon_pc" />
                 </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/detalhes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Ver Detalhes da sala"
+                    android:textAlignment="center"
+                    android:textColor="@color/sombra"
+                    android:textSize="12sp"
+                    android:theme="@style/Theme.MaterialComponents.NoActionBar"
+                    app:cornerRadius="8dp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

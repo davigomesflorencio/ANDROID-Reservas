@@ -12,11 +12,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 
+import com.google.android.material.button.MaterialButton;
 import com.ufc.reserva.R;
 import com.ufc.reserva.model.Sala;
-import com.ufc.reserva.ui.Reserva.CadastroReserva;
 import com.ufc.reserva.ui.Sala.DetalhesSala;
 
 import java.util.List;
@@ -65,27 +64,28 @@ public class AdapterSala extends ArrayAdapter<Sala> {
                 i.imageViewPc.setBackgroundTintList(context.getResources().getColorStateList(R.color.colorAccent));
             }
         }
-        i.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getContext(), DetalhesSala.class);
-                i.putExtra("id_sala", ids.get(position));
-                i.putExtra("nome_sala", sala.getNome());
-                i.putExtra("is_air", sala.isArcondicionado());
-                i.putExtra("is_proj", sala.isProjetor());
-                i.putExtra("is_wifi", sala.isWifi());
-                i.putExtra("quant_pc", sala.getQuant_pc());
-                i.putExtra("capacidade", sala.getCapacidade());
-                i.putExtra("is_disponivel", sala.isDisponibilidade());
-                context.startActivity(i);
-            }
-        });
+        i.materialButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(getContext(), DetalhesSala.class);
+                        i.putExtra("id_sala", ids.get(position));
+                        i.putExtra("nome_sala", sala.getNome());
+                        i.putExtra("is_air", sala.isArcondicionado());
+                        i.putExtra("is_proj", sala.isProjetor());
+                        i.putExtra("is_wifi", sala.isWifi());
+                        i.putExtra("quant_pc", sala.getQuant_pc());
+                        i.putExtra("capacidade", sala.getCapacidade());
+                        i.putExtra("is_disponivel", sala.isDisponibilidade());
+                        context.startActivity(i);
+                    }
+                }
+        );
         return convertView;
     }
 
 
     public class Item {
-        protected CardView cardView;
         protected ImageView imageViewSala;
         protected ImageView imageViewProjetor;
         protected ImageView imageViewWifi;
@@ -93,6 +93,7 @@ public class AdapterSala extends ArrayAdapter<Sala> {
         protected ImageView imageViewPc;
         protected TextView textViewSala;
         protected TextView textViewBloco;
+        protected MaterialButton materialButton;
 
         public Item(View view) {
             initViews(view);
@@ -107,7 +108,7 @@ public class AdapterSala extends ArrayAdapter<Sala> {
             imageViewPc = view.findViewById(R.id.icon_pc);
             textViewBloco = view.findViewById(R.id.textview_bloco);
             textViewSala = view.findViewById(R.id.textview_sala);
-            cardView = view.findViewById(R.id.cardview_sala);
+            materialButton = view.findViewById(R.id.detalhes);
         }
 
     }

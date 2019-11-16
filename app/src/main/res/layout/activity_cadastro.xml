@@ -7,116 +7,121 @@
     android:orientation="vertical"
     tools:context=".ui.Usuario.CadastroActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/AppTheme" />
+        android:background="@color/colorThemePrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_toolbar"
+            android:elevation="4dp"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fillViewport="true">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-
-                <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputNome"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:hint="Nome"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName|textCapWords" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputNome"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nome"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPersonName|textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Email"
-                        android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputSenha"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Senha"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPassword" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputSenhaRepetida"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Repita a senha"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPassword" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <ProgressBar
-                    android:id="@+id/sign_up_progress"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEmail"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:visibility="gone" />
+                    android:hint="Email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/bt_add"
-                    android:layout_width="wrap_content"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputSenha"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:src="@android:drawable/ic_input_add"
-                    app:backgroundTint="@color/colorBlueThemePrimary" />
+                    android:hint="Senha"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword" />
 
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputSenhaRepetida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Repita a senha"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
-    </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/sign_up_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bt_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@android:drawable/ic_input_add"
+                app:backgroundTint="@color/colorThemePrimary" />
+
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

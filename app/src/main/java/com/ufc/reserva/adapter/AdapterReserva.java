@@ -45,11 +45,10 @@ public class AdapterReserva extends RecyclerView.Adapter<ItemReserva> {
         Reserva r = reservas.get(position);
         AsyncTaskGetReservas asyncTaskGetReservas = new AsyncTaskGetReservas(r, holder.nomesala, holder.bloco, holder.horario, holder.data);
         asyncTaskGetReservas.execute();
-        holder.cardView.setOnLongClickListener(
-                new View.OnLongClickListener() {
+        holder.materialButton.setOnClickListener(
+                new View.OnClickListener() {
                     @Override
-                    public boolean onLongClick(View view) {
-
+                    public void onClick(View v) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setMessage("Deseja excluir esta reserva?").setTitle("Excluir Reserva");
                         builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
@@ -65,8 +64,6 @@ public class AdapterReserva extends RecyclerView.Adapter<ItemReserva> {
                         });
                         AlertDialog dialog = builder.create();
                         dialog.show();
-
-                        return true;
                     }
                 }
         );

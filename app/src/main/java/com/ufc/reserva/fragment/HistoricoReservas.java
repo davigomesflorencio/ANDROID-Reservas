@@ -1,8 +1,5 @@
 package com.ufc.reserva.fragment;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -11,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,10 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.ufc.reserva.R;
-import com.ufc.reserva.SplashScreen;
 import com.ufc.reserva.adapter.AdapterReserva;
 import com.ufc.reserva.model.Reserva;
-import com.ufc.reserva.ui.Usuario.LoginActivity;
 import com.ufc.reserva.util.FirebaseUtil;
 
 import java.util.ArrayList;
@@ -38,9 +34,15 @@ public class HistoricoReservas extends Fragment {
     private LottieAnimationView lottieAnimationView;
     private AdapterReserva adapterReserva;
     private List<String> ids;
+    private LinearLayoutManager llm;
 
     public HistoricoReservas() {
 
+    }
+
+    public static HistoricoReservas newInstance() {
+        HistoricoReservas fragment = new HistoricoReservas();
+        return fragment;
     }
 
     @Override
@@ -68,9 +70,16 @@ public class HistoricoReservas extends Fragment {
         return view;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
     private void initView(View view) {
         recyclerView = view.findViewById(R.id.lista_historico);
         lottieAnimationView = view.findViewById(R.id.lottie);
+        llm = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(llm);
     }
 
 
@@ -95,8 +104,6 @@ public class HistoricoReservas extends Fragment {
                             lottieAnimationView.cancelAnimation();
                             lottieAnimationView.setVisibility(View.GONE);
                         }
-                        LinearLayoutManager llm = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-                        recyclerView.setLayoutManager(llm);
                         recyclerView.setAdapter(adapterReserva);
                     }
 

@@ -6,42 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".ui.Sala.DetalhesSala">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/AppTheme"
+        android:background="@color/colorThemePrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imgViewSala"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="1dp"
-        android:background="@drawable/ic_user"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_toolbar"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/ic_user"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBlueThemeSecond"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgViewSala">
+        app:layout_constraintTop_toBottomOf="@id/appbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@color/sombra"
+            android:background="@drawable/bg_toolbar"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
@@ -62,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PROJETOR"
-                    android:textAppearance="@style/custom_font"
+
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -83,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="WI-Fi"
-                    android:textAppearance="@style/custom_font"
+
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -104,7 +114,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AR-CONDICIONADO"
-                    android:textAppearance="@style/custom_font"
+
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -125,9 +135,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PC"
-                    android:textAppearance="@style/custom_font"
+
                     android:textSize="12sp" />
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fbt_localizacao"
+                style="@style/Theme.MaterialComponents.NoActionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/sombra"
+                android:backgroundTint="@color/sombra"
+                android:src="@drawable/ic_location"
+                app:elevation="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Localização"
+
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -156,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Capacidade : 10 individuos"
-                android:textAppearance="@style/custom_font"
+
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -179,32 +216,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Disponível para reserva"
-                android:textAppearance="@style/custom_font"
                 android:textSize="12sp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/ic_location" />
-
-            <Button
-                android:id="@+id/bt_localizacao"
-                android:layout_width="200dp"
-                android:textSize="12sp"
-                android:layout_height="wrap_content"
-                android:text="Localização da sala"
-                android:textAppearance="@style/custom_font" />
-
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -223,7 +238,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Quantidade de computadores : "
-                android:textAppearance="@style/custom_font"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -234,17 +248,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_reservar"
-            android:layout_width="400dp"
-            android:textSize="15sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quero reservar esta sala"
-            android:textAppearance="@style/custom_font" />
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Deseja reservar esta sala? Clique aqui"
+            android:textAlignment="center"
+            android:textColor="@color/sombra"
+            android:textSize="12sp"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"
+            app:cornerRadius="8dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

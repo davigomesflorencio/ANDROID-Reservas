@@ -19,8 +19,6 @@
         android:fontFamily="@font/roboto"
         android:text="Sem acesso á internet"
         android:textAlignment="center"
-        android:textAppearance="@style/custom_font"
-        android:textColor="@color/colorBlueThemeSecond"
         android:textSize="25sp" />
 
 </LinearLayout>

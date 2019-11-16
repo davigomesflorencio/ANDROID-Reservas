@@ -4,13 +4,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
 import com.ufc.reserva.R;
 
 public class ItemReserva extends RecyclerView.ViewHolder {
-    CardView cardView;
+    MaterialButton materialButton;
     TextView nomesala;
     TextView bloco;
     TextView horario;
@@ -26,6 +26,6 @@ public class ItemReserva extends RecyclerView.ViewHolder {
         bloco = view.findViewById(R.id.bloco);
         horario = view.findViewById(R.id.horario);
         data = view.findViewById(R.id.dia);
-        cardView = view.findViewById(R.id.cardviewreserva);
+        materialButton = view.findViewById(R.id.bt_excluir);
     }
 }

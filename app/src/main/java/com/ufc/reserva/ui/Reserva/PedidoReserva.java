@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,22 +19,22 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.ufc.reserva.R;
 import com.ufc.reserva.model.Reserva;
-import com.ufc.reserva.ui.Principal;
 import com.ufc.reserva.util.FirebaseUtil;
 
 import java.util.Calendar;
 
-public class CadastroReserva extends AppCompatActivity {
+public class PedidoReserva extends AppCompatActivity {
 
     private FirebaseUtil firebaseUtil;
     private Calendar myCalendar;
     private EditText edittext;
     private Spinner spinner;
     private Toolbar toolbar;
-    private Button button;
+    private MaterialButton materialButton;
 
     protected ImageView imageViewProjetor;
     protected ImageView imageViewWifi;
@@ -49,10 +48,10 @@ public class CadastroReserva extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_reserva);
+        setContentView(R.layout.activity_pedido_reserva);
         firebaseUtil = new FirebaseUtil();
         initView();
-        builder = new AlertDialog.Builder(CadastroReserva.this);
+        builder = new AlertDialog.Builder(PedidoReserva.this);
     }
 
     private void getDataActivity() {
@@ -109,7 +108,7 @@ public class CadastroReserva extends AppCompatActivity {
         edittext = (EditText) findViewById(R.id.data);
         spinner = findViewById(R.id.horario);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        button = findViewById(R.id.bt_reservar);
+        materialButton = findViewById(R.id.fbt_reservar);
 
         imageViewProjetor = findViewById(R.id.icon_projetor);
         imageViewWifi = findViewById(R.id.icon_wifi);
@@ -130,21 +129,21 @@ public class CadastroReserva extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(CadastroReserva.this, date, myCalendar
+                new DatePickerDialog(PedidoReserva.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.sombra));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("Pedido de reserva de sala");
         getDataActivity();
-        button.setOnClickListener(new View.OnClickListener() {
+        materialButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
                 if (edittext.getText() != null) {
-                    builder.setMessage("Tem certeza que deseja realizar esta reserva?").setTitle("REALIAZR RESERVA");
-                    builder.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                    builder.setMessage("Tem certeza que deseja realizar o pedido de reserva desta sala?").setTitle("Pedido de reserva");
+                    builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             setReservasFirebase(view, id_sala, edittext.getText().toString(), spinner.getSelectedItem().toString());
                         }

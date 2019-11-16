@@ -66,7 +66,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         if (LibraryClass.isOnline(getApplicationContext()) == false) {
             open_error_internet();
         } else {
-            open_historico_reservas();
+            open_salas();
         }
     }
 
@@ -109,8 +109,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         txtview_name_user = findViewById(R.id.name_user);
         fm = getSupportFragmentManager();
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Minhas reservas");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.sombra));
+        toolbar.setTitle("Salas e Laboratórios");
         //Drawer Layout
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_draw, R.string.close_draw);
         drawerLayout.addDrawerListener(toggle);
@@ -120,7 +119,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         navigationView.setNavigationItemSelectedListener(this);
 
         //Bottom NavigationView
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        bottomNavigationView.getMenu().getItem(2).setChecked(true);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -243,7 +242,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
     private void open_historico_reservas() {
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, new HistoricoReservas());
+        ft.replace(R.id.container, HistoricoReservas.newInstance());
         ft.commit();
     }
 

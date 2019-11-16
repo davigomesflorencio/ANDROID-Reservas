@@ -36,44 +36,40 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:text="Reserva "
-                    android:textAppearance="@style/custom_font"
-                    android:textColor="@color/colorBlueThemePrimary" />
+                    android:textColor="@color/colorThemePrimary" />
 
                 <TextView
                     android:id="@+id/nome_sala"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Sala : "
-                    android:textAppearance="@style/custom_font" />
+                    android:text="Sala : " />
 
                 <TextView
                     android:id="@+id/bloco"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Bloco : "
-                    android:textAppearance="@style/custom_font" />
+                    android:text="Bloco : " />
 
                 <TextView
                     android:id="@+id/horario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Horario : "
-                    android:textAppearance="@style/custom_font" />
+                    android:text="Horario : " />
 
                 <TextView
                     android:id="@+id/dia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:text="Dia : "
-                    android:textAppearance="@style/custom_font" />
+                    android:text="Dia : " />
             </LinearLayout>
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_excluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -83,7 +79,7 @@
             android:text="Cancelar reserva"
             android:textAlignment="center"
             android:textColor="@color/sombra"
-            android:theme="@style/Theme.MaterialComponents.Light"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

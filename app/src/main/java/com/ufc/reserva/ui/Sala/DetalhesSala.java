@@ -13,12 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ufc.reserva.R;
-import com.ufc.reserva.ui.Reserva.CadastroReserva;
+import com.ufc.reserva.ui.Reserva.PedidoReserva;
 
 public class DetalhesSala extends AppCompatActivity {
 
-    private Button bt_localizacao;
+    private FloatingActionButton floatingActionButton;
     private Button bt_click_reserva;
     private Toolbar toolbar;
 
@@ -61,13 +62,13 @@ public class DetalhesSala extends AppCompatActivity {
     }
 
     private void initView() {
-        bt_localizacao = findViewById(R.id.bt_localizacao);
+        floatingActionButton = findViewById(R.id.fbt_localizacao);
         bt_click_reserva = findViewById(R.id.bt_reservar);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.sombra));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("Detalhes da Sala");
 
         imageViewProjetor = findViewById(R.id.icon_projetor);
         imageViewWifi = findViewById(R.id.icon_wifi);
@@ -79,17 +80,19 @@ public class DetalhesSala extends AppCompatActivity {
         textview_disponivel = findViewById(R.id.textview_disponibilidade);
         textView_quantpc = findViewById(R.id.textview_quantpc);
 
-        bt_localizacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(DetalhesSala.this, LocalizacaoSala.class);
-                startActivity(i);
-            }
-        });
+        floatingActionButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(DetalhesSala.this, LocalizacaoSala.class);
+                        startActivity(i);
+                    }
+                }
+        );
         bt_click_reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DetalhesSala.this, CadastroReserva.class);
+                Intent i = new Intent(DetalhesSala.this, PedidoReserva.class);
                 final Intent intent = getIntent();
 
                 i.putExtra("id_sala", intent.getStringExtra("id_sala"));

@@ -1,8 +1,5 @@
 package com.ufc.reserva.ui.Usuario;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -70,7 +66,6 @@ public class CadastroActivity extends Base implements View.OnClickListener {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Cadastro");
         FabCadastrar.setOnClickListener(this);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.sombra));
     }
 
     @Override

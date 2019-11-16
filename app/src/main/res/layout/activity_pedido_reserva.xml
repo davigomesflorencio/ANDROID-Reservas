@@ -4,29 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Reserva.CadastroReserva">
+    tools:context=".ui.Reserva.PedidoReserva">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/Widget.MaterialComponents.TabLayout"
-        android:layout_margin="10dp"
+        android:background="@color/colorThemePrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_toolbar"
+            android:elevation="4dp"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@color/colorBlueThemeSecond"
+        android:background="@drawable/bg_toolbar"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/appbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,7 +60,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PROJETOR"
-                    android:textAppearance="@style/custom_font"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -74,7 +80,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="WI-Fi"
-                    android:textAppearance="@style/custom_font"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -95,7 +100,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AR-CONDICIONADO"
-                    android:textAppearance="@style/custom_font"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -116,7 +120,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PC"
-                    android:textAppearance="@style/custom_font"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -148,11 +151,10 @@
                 android:layout_marginLeft="20dp"
                 android:clickable="true"
                 android:focusable="false"
-                android:textSize="12sp"
                 android:focusableInTouchMode="false"
                 android:hint="Selecione uma data"
                 android:inputType="none"
-                android:textAppearance="@style/custom_font" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -190,12 +192,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/bt_reservar"
-            android:layout_width="400dp"
-            android:textSize="12sp"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fbt_reservar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Reservar esta sala"
-            android:textAppearance="@style/custom_font" />
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Realizar Pedido de reserva"
+            android:textAlignment="center"
+            android:textColor="@color/sombra"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

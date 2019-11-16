@@ -1,21 +1,17 @@
 package com.ufc.reserva.ui.Usuario;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +19,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.ufc.reserva.R;
 import com.ufc.reserva.model.Usuario;
 import com.ufc.reserva.ui.Principal;
-import com.ufc.reserva.ui.Usuario.CadastroActivity;
 import com.ufc.reserva.ui.base.Base;
 import com.ufc.reserva.util.FirebaseUtil;
 import com.ufc.reserva.util.LibraryClass;
@@ -33,9 +28,9 @@ public class LoginActivity extends Base implements View.OnClickListener {
     private FirebaseUtil firebaseUtil = new FirebaseUtil();
 
     private Usuario usuario;
-    private Button loginButton;
+    private MaterialButton loginButton;
     private TextView cadastrar;
-    private Toolbar toolbar;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,12 +47,8 @@ public class LoginActivity extends Base implements View.OnClickListener {
         loginButton = findViewById(R.id.login);
         progressBar = (ProgressBar) findViewById(R.id.loading);
         cadastrar = (TextView) findViewById(R.id.txt_Cadastrar);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         loginButton.setOnClickListener(this);
         cadastrar.setOnClickListener(this);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.sombra));
-        setSupportActionBar(toolbar);
-        toolbar.setTitle("Login");
     }
 
     @Override
